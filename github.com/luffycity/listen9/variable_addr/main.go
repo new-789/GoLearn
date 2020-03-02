@@ -23,6 +23,6 @@ func testPoint2() {
 }
 
 func main() {
-	testPoint1()
+	//testPoint1()
 	testPoint2()
 }

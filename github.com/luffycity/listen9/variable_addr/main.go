@@ -48,9 +48,26 @@ func testPoint4() {
 	fmt.Printf("ar 数组更改之后的值:%v\n", ar)
 }
 
+func testPoint5() {
+	// 创建一个指针型类型的变量 a ，且设定为 int 类型，new(int) 表示为该指针变量创建一个内存地址，这样就可以直接对指针变量像值类型变量那样进行操作了
+	var a *int = new(int)
+	*a = 100 // 直接操作指针变量，为其赋值 100
+	fmt.Printf("*a=%d\n", *a)
+
+	// 使用 new 语法创建一个指针类型的空切片
+	var b *[]int = new([]int)
+	fmt.Printf("*b=%v\n", *b)
+	//(*b)[0] = 100  由于指针切片为空且指针类型的变量指向的是内存地址，所以不支持直接操作赋值
+	(*b) = make([]int, 5, 10) // 将指针切片使用 make 方法进行初始化
+	(*b)[0] = 100
+	(*b)[1] = 200
+	fmt.Printf("*b=%v\n", *b)
+}
+
 func main() {
 	//testPoint1()
 	//testPoint2()
 	//testPoint3()
-	testPoint4()
+	//testPoint4()
+	testPoint5()
 }

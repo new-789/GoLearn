@@ -22,7 +22,20 @@ func testPoint2() {
 	fmt.Printf("a is value:%d\n", a) // 再次打印变量 a 的内容，同样被更改为 200
 }
 
+func modify(point *int) {
+	// 定义 testPoint3 函数，接收一个指针类型的传参
+	*point = 88 // 更改指针类型参数 point 接收到的值为 88
+}
+
+func testPoint3() {
+	var a int = 100                               // 声名一个 int 类型的变量 a，并初始化为 100
+	var b *int = &a                               // 声名一个 int 类型的指针类型变量 b， 并初始化为变量 a 的内存地址
+	modify(b)                                     // 调用函数并将指针类型变量 b 当做参数传递, 相当于将指针变量 b 的内存地址拷贝一份给函数中定义的参数，即 point := &b
+	fmt.Printf("a value:%d, b value:%d\n", a, *b) // 函数中修改指针参数值后输出变量 a 与指针变量 b 相对应的值
+}
+
 func main() {
-	testPoint1()
-	testPoint2()
+	//testPoint1()
+	//testPoint2()
+	testPoint3()
 }

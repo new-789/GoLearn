@@ -16,7 +16,7 @@ var (
 const ( // 定义常量，设定密码组成的字符内容
 	NumStr  = "0123456789"                                         // 密码为数字的内容来源
 	CharStr = "ABCDEFGHIJKMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz" // 密码为字符串内容来源
-	SpecStr = "!@#$%^{}[]<>&*?/~"                                  // 密码为特殊字符的内容来源
+	SpecStr = "!@#$%^{=}[+]<>&(*?/~)"                              // 密码为特殊字符的内容来源
 )
 
 func parseArgs() {
@@ -47,7 +47,7 @@ func generatePassword() string {
 		sourceStr = NumStr
 	}
 	for i := 0; i < length; i++ {
-		index := rand.Intn(len(sourceStr))            // 使用 rand 模块随机生成字符串的下标
+		index := rand.Intn(len(sourceStr))            // 使用 rand 模块随机生成字符串的下标,rand.Intn 表示随机生成 0 到 n 的数字
 		password = append(password, sourceStr[index]) // 通过随机生成的字符串下标获取内容添加到 password 切片中
 	}
 	return string(password) // 强制将 password 切片转换为字符串类型的数据

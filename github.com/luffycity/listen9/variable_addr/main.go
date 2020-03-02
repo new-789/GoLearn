@@ -62,6 +62,31 @@ func testPoint5() {
 	(*b)[0] = 100
 	(*b)[1] = 200
 	fmt.Printf("*b=%v\n", *b)
+
+	// 使用 new 语法创建一个指针类型的空数组
+	var c *[3]int = new([3]int)
+	(*c)[1] = 100
+	fmt.Printf("*c = %v\n", *c)
+}
+
+func modifyVar(a int) int {
+	fmt.Printf("未更改参数 a 值之前：a=%d\n", a)
+	a = 1000
+	return a
+}
+
+func testPoint6() {
+	var b int = 100
+	a := modifyVar(b) // 调用函数接收更改参数 a 之后返回的值
+	fmt.Printf("更改参数a之后a参数的值：a=%d , b=%d\n", a, b)
+}
+
+func testPoint7() {
+	var a int = 100
+	var b *int = &a
+	var c *int = b
+	*c = 200
+	fmt.Printf("a=%d , *b=%d , *c=%d\n", a, *b, *c)
 }
 
 func main() {
@@ -69,5 +94,7 @@ func main() {
 	//testPoint2()
 	//testPoint3()
 	//testPoint4()
-	testPoint5()
+	//testPoint5()
+	//testPoint6()
+	testPoint7()
 }

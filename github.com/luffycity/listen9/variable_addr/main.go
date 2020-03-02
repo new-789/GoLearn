@@ -34,8 +34,23 @@ func testPoint3() {
 	fmt.Printf("a value:%d, b value:%d\n", a, *b) // 函数中修改指针参数值后输出变量 a 与指针变量 b 相对应的值
 }
 
+func modifyArray(arr *[3]int) {
+	// 定义函数接收一个指针变量的数组作为参数
+	(*arr)[1] = 88 // 更改数组中的值,注意指针参数获取数组内容语法
+}
+
+func testPoint4() {
+	// 定义一个类型为 int 长度为 3 的数组 ar
+	ar := [...]int{78, 89, 98}
+	// 调用 modifyArray 函数，并获取数组 ar 的内存地址当做参数传递给函数
+	modifyArray(&ar)
+	// 查看在函数中将指针变量数组中的元素更改之后原 ar 数组中的内容
+	fmt.Printf("ar 数组更改之后的值:%v\n", ar)
+}
+
 func main() {
 	//testPoint1()
 	//testPoint2()
-	testPoint3()
+	//testPoint3()
+	testPoint4()
 }

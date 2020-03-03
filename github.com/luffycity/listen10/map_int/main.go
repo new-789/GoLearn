@@ -18,7 +18,8 @@ func main() {
 	a["stu04"] = 400
 
 	var key string = "stu04" // 定义一个变量并初始化内容为 map 数据中存在的 key 值
-	// 通过 map 变量[key] 语法访问 map 数据中的元素
+	// 通过定义的变量 key 访问 map 类型总的数据
 	fmt.Printf("the's key[%s] value %d\n", key, a[key])
+	// 直接通过 map 变量[key] 语法访问 map 数据中的元素
 	fmt.Printf("the's key[stu01] value %d\n", a["stu01"])
 }

@@ -73,6 +73,6 @@ func example1() {
 
 func main() {
 	// primenum()
-	// example()
+	// example1()
 	example1()
 }

@@ -17,6 +17,6 @@ func main() {
 	user.Username = "test" // 通过 user 变量调用结构体中的 Username 字段名
 	user.Sex = "男"
 	user.int = 88 // 通过 user 结构体声名的变量访问匿名字段
-	user.string = "湖北"
+	user.string = "HuBei"
 	fmt.Printf("user：%#v", user)
 }

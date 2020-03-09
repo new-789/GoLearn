@@ -29,14 +29,14 @@ type Users01 struct {
 func test02() {
 	var user01 Users01
 	// 访问 Users01 结构体中的 City 字段
-	//user01.City = "武汉市"
-	//fmt.Printf("user02:%#v\n", user01)
+	user01.City = "武汉市"
+	fmt.Printf("user02:%#v\n", user01)
 
 	user01.Address = new(Address) // 使用 new 方法初始化 Address 匿名结构体字段
 	user01.Email = new(Email)     // 使用 new 方法初始化 Email 匿名结构体字段
-	//user01.Address.City = "宜昌市"  // 解决冲突访问匿名结构体中的字段方法
+	user01.Address.City = "宜昌市"   // 解决冲突访问匿名结构体中的字段方法
 	// user02.Address.City 表示访问 Address 结构体中的 city 方法，
-	//fmt.Printf("user01:%#v , City of address:%s \n", user01, user01.Address.City)
+	fmt.Printf("user01:%#v , City of address:%s \n", user01, user01.Address.City)
 
 	user01.Email.CreateTime = "2020-02-02"   // 指定 Email 匿名结构体名指定需要访问 Email 结构体中的 CreateTime 字段名
 	user01.Address.CreateTime = "2020-03-08" // 指定 Address 匿名结构体名指定需要访问 Address 结构体中的 CreateTime 字段名

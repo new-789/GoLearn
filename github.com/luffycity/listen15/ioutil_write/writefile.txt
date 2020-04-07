@@ -1,0 +1,14 @@
+
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中
+通过 ioutil 工具包中的 WriteFile 方法将文件整个写入到 writefile.txt 文件中

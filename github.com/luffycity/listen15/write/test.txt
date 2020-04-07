@@ -1,0 +1,7 @@
+
+		func main() {
+			fmt.Println("这是 Write 方法写入的内容")
+		}
+
+这是 WriteAt 方法写入的内容
+

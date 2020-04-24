@@ -1,39 +1,32 @@
 package main
 
 import (
-	"fmt"
-	"github.com/luffycity/listen17/log"
+	"github.com/luffycity/logger"
 )
 
-func LogLevelAssert(l interface{}) {
-	switch v := l.(type) {
-	// 使用接口设定规则标准后，无论断言出来的是何种类型都只需要调用相同的方法
-	case log.FileLog:
-		v.LogDebug("这是 file 程序的 Debug 日志测试信息")
-		v.LogWarn("这是 file 程序的 Warn 日志测试信息")
-	case log.Console:
-		v.LogDebug("这是 console 程序的 Debug 日志测试信息")
-		v.LogWarn("这是 console 程序的 Warn 日志测试信息")
-	default:
-		fmt.Println("对不起，这是什么类型的内容，我们暂时无法判断")
+func initLogger(name, logPath, logName string, level string) (err error) {
+	m := make(map[string]string, 8)
+	m["log_path"] = logPath      // 设置日志文件的路径
+	m["log_name"] = logName      // 设置日志文件的名称
+	m["log_level"] = level       // 设施日志级别
+	m["log_split_type"] = "size" // 设置文件的切分方式
+	err = logger.InitLogger(name, m)
+	if err != nil {
+		return
+	}
+	logger.Debug("init logger success")
+	return
+}
+
+func Run() {
+	for {
+		logger.Debug("user server is running E:\\CodingFiles\\GolangCode\\src\\github.com\\luffycity\\listen17\\user_server")
+		//time.Sleep(time.Second)
 	}
 }
 
 func main() {
-	// 将日志内容写入到文件
-	// 通过 log 包中的 NewFileLog 方法生成一个文件实例 file
-	//file := log.NewFileLog("c:/a.log")
-	//file.LogDebug("这是 Debug 日志信息")
-	//file.LogWarn("这是 Warn 日志信息")
-
-	// 将日志打印到控制台
-	//console := log.NewConsole("ssss")
-	//console.LogDebug("这是打印到控制台的 debug 日志测试")
-	//console.LogWarn("这是打印到控制台的 warn 日志测试")
-
-	file := log.NewFileLog("c:/test.log")
-	LogLevelAssert(file)
-
-	console := log.NewConsole("sss")
-	LogLevelAssert(console)
+	initLogger("file", "E:/logs", "user_server", "debug")
+	Run()
+	return
 }

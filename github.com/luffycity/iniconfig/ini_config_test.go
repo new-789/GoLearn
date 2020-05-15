@@ -1,3 +1,4 @@
+// 该文件中的代码为测试配置库代码内容，使用前可删除
 package iniconfig
 
 import "testing"

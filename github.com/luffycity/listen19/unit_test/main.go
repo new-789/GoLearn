@@ -3,5 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello")
+	var a = 100
+	var b = 200
+	c := Add(a, b)
+	fmt.Printf("%d + %d = %d", a, b, c)
 }

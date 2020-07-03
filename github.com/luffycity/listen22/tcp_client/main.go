@@ -47,7 +47,7 @@ func main() {
 		if data == "Q" || data == "q" {
 			break
 		}
-		// 发送数据
+		// 调用 send 函数发送数据
 		er := send(conn, []byte(data))
 		if err != nil{
 			fmt.Println("send data failed,err:", er)
